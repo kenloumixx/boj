@@ -17,14 +17,14 @@ int main() {
     int game_num;
     cin >> game_num;
 
-    vector<pair<int, int>> game_number(MAX_NUMBER);
+    vector<pair<int, int>> game_number(game_num+1);
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < min(game_num+1, 10); i++) {
         game_number[i].first = 0;
         game_number[i].second = -1;
     }
 
-    for (int i = 10; i <= MAX_NUMBER; i++) {
+    for (int i = 10; i <= game_num; i++) {
         string str_i = to_string(i);
         vector<int> subset_i;
         for (int j = 0; j < str_i.length(); j++) {              // 시작점
